@@ -72,11 +72,9 @@
 				//settings menu
 				
 				if($result["admin"]==0){
-					echo $result["username"] . " nije admin<br />";
 					echo "<a href='settings.php?change_pass=1' >Promjeni lozinku</a><br /><a href='settings.php?del_acc=1' >Obrisi racun</a><br />";
 				}
 				else{
-					echo $result["username"]." is an admin<br />";
 					echo "<a href='settings.php?change_pass=1' >Promjeni lozinku</a><br /><a href='settings.php?del_acc=1' >Obrisi racun</a><br />";
 					echo "<a href='settings.php?del_other_acc=1' >Obrisi druge racune</a><br />";
 				}

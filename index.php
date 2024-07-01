@@ -23,7 +23,7 @@ if (!$result) {
             <div id='data'>
                 <table id='itemList'>
                     <thead>
-                    <tr>
+                    <tr style="background-color: #3ab520">
                         <th>ID</th>
                         <th>Naziv</th>
                         <th>Kolicina</th>

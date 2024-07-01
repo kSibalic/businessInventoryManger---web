@@ -8,9 +8,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
         <?php
         //product start
         if(!strcmp(strtolower($_GET['name']),"product") && isset($_GET['success'])){
-            // Ensure the product_type is set and not empty
-            $product_type = isset($_POST['product_type']) ? $_POST['product_type'] : 0;
-            $result = mysqli_query($connect, "UPDATE product SET product_name='{$_POST['product_name']}', supplier_id={$_POST['supplier']}, quantity={$_POST['quantity']}, product_type='{$product_type}', market_price={$_POST['mprice']} WHERE product_id='{$_POST['product_id']}'");
+            $result = mysqli_query($connect, "UPDATE product SET product_name='{$_POST['product_name']}', supplier_id={$_POST['supplier']}, quantity={$_POST['quantity']}, market_price={$_POST['mprice']} WHERE product_id='{$_POST['product_id']}'");
             if(!$result){
                 echo "Promjena NIJE uspjela! ".mysqli_error($connect);
             } else {
@@ -20,7 +18,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
             if(isset($_GET['name']) && isset($_GET['id'])){
                 //product
                 if(!strcmp(strtolower($_GET['name']),"product")){
-                    echo "<h1><span>Uredi ".ucfirst($_GET['name'])."</span></h1>";
+                    echo "<h1><span>Uredi proizvod</span></h1>";
                     echo "<div id='data'>";
 
                     $plist = mysqli_query($connect, "SELECT * FROM product WHERE product_id='{$_GET['id']}'");
@@ -28,19 +26,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
                     echo "<form method='post' action='editlist.php?name=product&success=1'>
                             <table>
                                 <tr><td style='padding:5px'>Naziv: </td><td><input name='product_name' type='text' value='{$plist['product_name']}' /></td></tr>
-                                <input type='hidden' name='product_id' value='{$plist['product_id']}' />
-                                <tr><td style='padding:5px'>Kategorija: </td>
-                                <td><select name='product_type'>";
-
-                    // Populate the dropdown with options for product_type
-                    $product_types = array(1 => 'Type1', 2 => 'Type2', 3 => 'Type3'); // Example types
-                    foreach($product_types as $key => $value) {
-                        if($key == $plist['product_type']) {
-                            echo "<option value='{$key}' selected='selected'>{$value}</option>";
-                        } else {
-                            echo "<option value='{$key}'>{$value}</option>";
-                        }
-                    }
+                                <input type='hidden' name='product_id' value='{$plist['product_id']}' />";
 
                     echo        "</select>
                                 </td></tr>
@@ -78,7 +64,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
             if(isset($_GET['name']) && isset($_GET['id'])){
                 //supplier
                 if(!strcmp(strtolower($_GET['name']),"supplier")){
-                    echo "<h1><span>Uredi ".ucfirst($_GET['name'])."</span></h1>";
+                    echo "<h1><span>Uredi dobavljača</span></h1>";
                     echo "<div id='data'>";
 
                     $plist = mysqli_query($connect, "SELECT * FROM supplier WHERE sid='{$_GET['id']}'");
@@ -119,7 +105,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
         } else {
             if(isset($_GET['name']) && isset($_GET['id'])){
                 if(!strcmp(strtolower($_GET['name']), "employee")){
-                    echo "<h1><span>Uredi ".ucfirst($_GET['name'])."</span></h1>";
+                    echo "<h1><span>Uredi zaposlenika</span></h1>";
                     echo "<div id='data'>";
 
                     $elist = mysqli_query($connect, "SELECT * FROM employee WHERE id='{$_GET['id']}'");

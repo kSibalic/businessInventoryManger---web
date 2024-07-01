@@ -22,22 +22,11 @@ html *{
 	background-color:#000;
 	letter-spacing: 1px;
 	border-radius:4px;
-	-moz-border-radius:4px;
-	-webkit-transition: all 0.2s linear;
-	-moz-transition: all 0.2s linear;
-	-o-transition: all 0.2s linear;
-	-ms-transition: all 0.2s linear;
-	transition: all 0.2s linear;
 }
 .bmenu:hover li a{
-	text-shadow: 0px 0px 10px #236f13;
 	color: #236f13;
-	background: rgba(0,0,0,0.9);
 }
 .bmenu li a:hover{
 	margin-left:10px;
-	-moz-border-radius:0px;
 	border-radius:0px;
-	background: rgba(0,0,0,1.0);
-	text-shadow: 0px 0px 1px #236F13FF;
 }

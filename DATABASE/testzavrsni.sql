@@ -79,9 +79,8 @@ INSERT INTO `login` (`username`, `password`, `id`, `admin`) VALUES
 CREATE TABLE IF NOT EXISTS `product` (
 `product_id` int(11) NOT NULL,
   `supplier_id` int(6) NOT NULL,
-  `product_name` varchar(20) NOT NULL,
+  `product_name` varchar(50) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT '0',
-  `product_type` int(11) NOT NULL,
   `market_price` int(7) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
@@ -89,14 +88,14 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `supplier_id`, `product_name`, `quantity`, `product_type`, `market_price`) VALUES
-(100, 1, 'JD filter ulja motora', 3, 1, 23),
-(101, 1, 'JD filter zraka', 2, 1, 106),
-(102, 2, 'DF alternator 14V 150A', 1, 1, 914),
-(200, 2, 'BASF CORUM', 15, 2, 68),
-(201, 3, 'BASF REVYCARE', 28, 2, 66),
-(300, 3, 'KWS sjemenski kukuruz', 590, 3, 50),
-(301, 3, 'RWA smjeme pšenice', 950, 3, 19);
+INSERT INTO `product` (`product_id`, `supplier_id`, `product_name`, `quantity`, `market_price`) VALUES
+(100, 1, 'JD filter ulja motora', 3, 23),
+(101, 1, 'JD filter zraka', 2, 106),
+(102, 2, 'DF alternator 14V 150A', 1, 914),
+(200, 2, 'BASF CORUM', 15, 68),
+(201, 3, 'BASF REVYCARE', 28, 66),
+(300, 3, 'KWS sjemenski kukuruz', 590, 50),
+(301, 3, 'RWA smjeme pšenice', 950, 19);
 
 -- --------------------------------------------------------
 
@@ -109,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   `semail` varchar(40) NOT NULL,
   `sid` int(11) NOT NULL,
   `saddress` varchar(50) NOT NULL,
-  `sphone` int(12) NOT NULL
+  `sphone` varchar(15) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
@@ -117,9 +116,9 @@ CREATE TABLE IF NOT EXISTS `supplier` (
 --
 
 INSERT INTO `supplier` (`sdealer`, `semail`, `sid`, `saddress`, `sphone`) VALUES
-('Novocommerce', 'dario.sokic@novocommerce.hr', 1, 'Jablanova 16 31000 Osijek', 456456),
-('Santini', 'santini@vk.t-com.hr', 2, 'Ante Starcevica 79 32100 Vinkovci', 789789),
-('Cezareja', 'cezareja@cezareja.hr', 3, 'Gorjani 175 32281 Ivankovo', 102030);
+('Novocommerce', 'dario.sokic@novocommerce.hr', 1, 'Jablanova 16 31000 Osijek', '456456'),
+('Santini', 'santini@vk.t-com.hr', 2, 'Ante Starcevica 79 32100 Vinkovci', '789789'),
+('Cezareja', 'cezareja@cezareja.hr', 3, 'Gorjani 175 32281 Ivankovo', '102030');
 
 -- --------------------------------------------------------
 

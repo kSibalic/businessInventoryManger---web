@@ -35,12 +35,12 @@ if(isset($_POST['username'])){
 ?>
 <html>
 <head>
-    <title>Supermarket Management</title>
-    <link rel="stylesheet" type="text/css" href="css/outline.css" />
-    <link rel="stylesheet" type="text/css" href="css/menu.css" />
+    <title>Inventory Manager</title>
+    <link rel="stylesheet" type="text/css" href="css/outline.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/design.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@ if(isset($_POST['username'])){
         </div>
         <div class="mcontent">
             <div align="center">
-                <strong>Login<br></strong>
+                <strong>Prijava u sustav<br></strong>
                 <div id="data">
                     <div align="center">
                         <?php
@@ -63,9 +63,9 @@ if(isset($_POST['username'])){
                             if(isset($temp)) echo "Incorrect username or password.";
                             echo "<form method='post' action='login.php'>
                                 <table>
-                                    <tr><td style='padding:5px'>Username:</td><td style='padding:5px'><input type='text' name='username' placeholder='Username' required /></td></tr>
-                                    <tr><td style='padding:5px'>Password:</td><td style='padding:5px'><input type='password' name='password' placeholder='Password' required /></td></tr>
-                                    <tr><td colspan='2' style='padding:5px;'><input type='submit' value='Login' /></td></tr>
+                                    <tr><td style='padding:5px'>Ime:</td><td style='padding:5px'><input type='text' name='username' placeholder='ime' required /></td></tr>
+                                    <tr><td style='padding:5px'>Lozinka:</td><td style='padding:5px'><input type='password' name='password' placeholder='lozinka' required /></td></tr>
+                                    <tr><td colspan='2' style='padding:5px;'><input type='submit' value='Prijava' /></td></tr>
                                 </table>
                               </form>";
                         }

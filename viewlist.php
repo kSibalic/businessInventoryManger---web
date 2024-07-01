@@ -8,7 +8,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
         <?php if(isset($_GET['list'])){
             //product
             if(!strcmp(strtolower($_GET['list']),"product")){
-                echo"<h1><span>Popis ".ucfirst($_GET['list'])."</span></h1>";
+                echo"<h1><span>Popis proizvoda</span></h1>";
                 echo"<div id='contentbox'><div id='data'>
                  <table id='itemList' ><tr><th>ID</th><th>Naziv</th><th>Dobavljač</th><th>Cijena</th><th>Opcije</th></tr>";
                 $plist = mysqli_query($connect,"SELECT product.product_id, product.product_name, product.quantity, product.supplier_id, supplier.sdealer FROM product INNER JOIN supplier ON product.supplier_id = supplier.sid;");
@@ -26,7 +26,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
             //supplier
             elseif(!strcmp(strtolower($_GET['list']),"supplier")){
-                echo"<h1><span>Popis ".ucfirst($_GET['list'])."</span></h1>";
+                echo"<h1><span>Popis dobavljača</span></h1>";
                 echo"<div id='contentbox'><div id='data'>
                  <table id='itemList' ><tr><th>ID</th><th>Naziv</th><th>Email</th><th>Telefon</th><th>Opcije</th></tr>";
                 $slist = mysqli_query($connect, "SELECT sid, sdealer, semail, sphone FROM supplier");
@@ -43,7 +43,7 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
             //employee
             elseif(!strcmp(strtolower($_GET['list']),"employee")){
-                echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
+                echo"<h1><span>Popis zaposlenika</span></h1>";
                 echo"<div id='contentbox'><div id='data'><table id='itemList' ><tr><th>ID</th><th>Ime</th><th>Placa</th><th>Admin</th><th>Dob</th><th>Telefon</th><th>Adresa</th><th>OIB</th><th>Opcije</th></tr>";
                 $slist = mysqli_query($connect, "SELECT id, first_name, last_name, salary, admin, dob, phone_number, address, uid FROM employee");
                 while($row = mysqli_fetch_array($slist)){
